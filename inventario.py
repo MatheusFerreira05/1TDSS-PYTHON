@@ -108,6 +108,49 @@ def alterar_preco():
 def remover():
     produtos.remove(input("entre com o produto a remover: "))
     #del produtos[0]
+    remove = input("Entre com o nome do produto").title()
+    if remove in produtos:
+        for index in range(0, len(id)):
+            if remove == produtos[index]:
+                del produtos[index]
+                del id [index]
+                del produtos[index]
+                del qtd [index]
+                del validade [index]
+                del lote [index]
+                del valor_compra [index]
+                del data_entrada [index]
+                del data_saida [index]
+                del valor_atual [index]
+                del departamento [index]
+                del filial [index]
+                break
+
 
 def vender():
-    ...
+    vende = input("Entre com o nome do produto: ").title()
+    if vende in produtos:
+        for index in range(0, len(id)):
+            if vende == produtos[index]:
+                data = input("Entre com a nova data de saída: ")
+                data_saida[index] = data
+                print("\nID:..................", id[index])
+                print("Nome:................", produtos[index])
+                print("Quantidade:..........", qtd[index])
+                if validade[index] < 0:
+                    tempo = "Produto sem validade definida"
+                else:
+                    tempo = str(validade[index])
+                print("Validade:............", tempo)
+                print("Lote:................", lote[index])
+                print("Valor de compra:.....", valor_compra[index])
+                print("Data de entrada:.....", data_entrada[index])
+                if data_saida[index] == "":
+                    tmp = "Produto não vendido!"
+                else:
+                    tmp = data_saida[index]
+                print("Data de Saida:.......", tmp)
+                print("Valor Atualizado:....", valor_atual[index])
+                print("Valor total alocado:.", (int(valor_compra[index])*int(qtd[index])))
+                print("Departamento:........", departamento[index])
+                print("Filial:..............", filial[index])
