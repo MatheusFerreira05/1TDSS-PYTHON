@@ -9,7 +9,6 @@ data_saida = ["", ""]
 valor_atual = [1, 3000]
 departamento = ["Copa", "RH"]
 filial = ["São Paulo", "São Paulo"]
-
 def adicionar():
     id.append(id[len(id)-1]+1)
     produtos.append(input("Entre com o nome do produto: ").title())
@@ -23,7 +22,6 @@ def adicionar():
     valor_atual.append(preco)
     departamento.append(input("Entre com o nome do departamento: "))
     filial.append(input("Entre com o nome da filial: "))
-
 def relatorio():
     for index in range(0, len(id)):
         print("\nID:..................", id[index])
@@ -46,7 +44,6 @@ def relatorio():
         print("Valor total alocado:.", (int(valor_compra[index])*int(qtd[index])))
         print("Departamento:........", departamento[index])
         print("Filial:..............", filial[index])
-
 def busca():
     busca = input("Entre com o nome do produto: ").title()
     if busca in produtos:
@@ -74,7 +71,6 @@ def busca():
                 print("Filial:..............", filial[index])
     else:
         print("Produto fora de estoque!")
-
 def alterar_preco():
     altera = input("Entre com o nome do produto: ").title()
     if altera in produtos:
@@ -104,35 +100,34 @@ def alterar_preco():
                 print("Filial:..............", filial[index])
     else:
         print("Produto fora de estoque!")
-
 def remover():
-    produtos.remove(input("entre com o produto a remover: "))
-    #del produtos[0]
-    remove = input("Entre com o nome do produto").title()
+    remove = input("Entre com o nome do produto: ").title()
     if remove in produtos:
         for index in range(0, len(id)):
             if remove == produtos[index]:
                 del produtos[index]
-                del id [index]
-                del produtos[index]
-                del qtd [index]
-                del validade [index]
-                del lote [index]
-                del valor_compra [index]
-                del data_entrada [index]
-                del data_saida [index]
-                del valor_atual [index]
-                del departamento [index]
-                del filial [index]
+                del id[index]
+                del qtd[index]
+                del validade[index]
+                del lote[index]
+                del valor_compra[index]
+                del data_entrada[index]
+                del data_saida[index]
+                del valor_atual[index]
+                del departamento[index]
+                del filial[index]
+                relatorio()
                 break
-
-
+                
+    else:
+        print("Produto fora de estoque!")
+    
 def vender():
     vende = input("Entre com o nome do produto: ").title()
     if vende in produtos:
         for index in range(0, len(id)):
             if vende == produtos[index]:
-                data = input("Entre com a nova data de saída: ")
+                data = input("Entre com a nova data de saida: ")
                 data_saida[index] = data
                 print("\nID:..................", id[index])
                 print("Nome:................", produtos[index])
@@ -154,3 +149,5 @@ def vender():
                 print("Valor total alocado:.", (int(valor_compra[index])*int(qtd[index])))
                 print("Departamento:........", departamento[index])
                 print("Filial:..............", filial[index])
+    else:
+        print("Produto fora de estoque!")
