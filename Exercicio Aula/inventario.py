@@ -1,6 +1,3 @@
-
-
-
 def adicionar(produtos):
     id = list(produtos.keys())
     preco = float(input("Entre com o preço produto: "))
